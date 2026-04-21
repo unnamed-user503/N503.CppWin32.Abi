@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #ifdef N503_DLL_EXPORTS
 #define N503_API __declspec(dllexport)

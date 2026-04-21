@@ -8,41 +8,41 @@
 namespace N503::Abi
 {
 
-    /// @brief 
-    /// @tparam T 
+    /// @brief
+    /// @tparam T
     template <typename T>
         requires std::is_void_v<T> || std::is_move_constructible_v<T>
     struct [[nodiscard]] Result final
     {
-        /// @brief 
+        /// @brief
         T Value;
 
-        /// @brief 
+        /// @brief
         N503::Abi::Status Status;
 
-        /// @brief 
-        /// @return 
+        /// @brief
+        /// @return
         constexpr auto IsSuccess() const noexcept -> bool
         {
             return Status == Status::Success;
         }
 
-        /// @brief 
-        /// @return 
+        /// @brief
+        /// @return
         constexpr auto IsFailed() const noexcept -> bool
         {
             return Status != Status::Success;
         }
 
-        /// @brief 
+        /// @brief
         constexpr explicit operator bool() const noexcept
         {
             return IsSuccess();
         }
 
-        /// @brief 
-        /// @return 
-        constexpr auto operator->() -> T*
+        /// @brief
+        /// @return
+        constexpr auto operator->() -> T *
         {
             if (Status != Status::Success)
             {
@@ -52,9 +52,9 @@ namespace N503::Abi
             return &Value;
         }
 
-        /// @brief 
-        /// @return 
-        constexpr auto operator->() const -> const T*
+        /// @brief
+        /// @return
+        constexpr auto operator->() const -> const T *
         {
             if (Status != Status::Success)
             {
@@ -64,9 +64,9 @@ namespace N503::Abi
             return &Value;
         }
 
-        /// @brief 
-        /// @return 
-        constexpr auto operator*() & -> T&
+        /// @brief
+        /// @return
+        constexpr auto operator*() & -> T &
         {
             if (Status != Status::Success)
             {
@@ -80,24 +80,24 @@ namespace N503::Abi
     /// @brief
     template <> struct [[nodiscard]] Result<void> final
     {
-        /// @brief 
+        /// @brief
         N503::Abi::Status Status;
 
-        /// @brief 
-        /// @return 
+        /// @brief
+        /// @return
         constexpr auto IsSuccess() const noexcept -> bool
         {
             return Status == Status::Success;
         }
 
-        /// @brief 
-        /// @return 
+        /// @brief
+        /// @return
         constexpr auto IsFailed() const noexcept -> bool
         {
             return Status != Status::Success;
         }
 
-        /// @brief 
+        /// @brief
         constexpr explicit operator bool() const noexcept
         {
             return IsSuccess();

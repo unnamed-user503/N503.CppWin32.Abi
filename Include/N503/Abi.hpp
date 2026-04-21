@@ -1,4 +1,4 @@
-﻿#pragma once
+#pragma once
 
 #include <N503/Abi/Api.hpp>
 #include <N503/Abi/Exception.hpp>
