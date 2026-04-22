@@ -42,7 +42,7 @@ namespace N503::Abi
 
         /// @brief
         /// @return
-        constexpr auto operator->() -> T *
+        constexpr auto operator->() -> T*
         {
             if (Status != Status::Success)
             {
@@ -54,7 +54,7 @@ namespace N503::Abi
 
         /// @brief
         /// @return
-        constexpr auto operator->() const -> const T *
+        constexpr auto operator->() const -> const T*
         {
             if (Status != Status::Success)
             {
@@ -66,7 +66,7 @@ namespace N503::Abi
 
         /// @brief
         /// @return
-        constexpr auto operator*() & -> T &
+        constexpr auto operator*() & -> T&
         {
             if (Status != Status::Success)
             {

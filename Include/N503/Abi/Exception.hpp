@@ -36,7 +36,7 @@ namespace N503::Abi
         /// @param status
         /// @param location
         /// @return
-        static auto FormatMessage(Status status, const std::source_location &location) -> std::string
+        static auto FormatMessage(Status status, const std::source_location& location) -> std::string
         {
             return std::format(
                 "N503 ABI Error: {:08X}\n"
